@@ -6,6 +6,7 @@
 > - [ ] Tailwind CSS
 > - [ ] Test (can test with Ant and Tailwind)
 > - [ ] jsconfig.json
+> - [ ] eslint
 > - [ ] Router
 > - [ ] Axios
 > - [ ] add .env and .env.default
@@ -18,5 +19,6 @@
 > - [ ] Global
 > - [ ] ORM &rarr; Sequelize
 > - [ ] Bootstrap
+> - [ ] eslint
 > - [ ] Router
 > - [ ] Policy (Auth)
