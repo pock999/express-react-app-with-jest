@@ -1,8 +1,8 @@
 # TODO List
 
 > ## react-app(Front-End)
-> - [V] Ant Design
-> - [V] Test(can test with Ant Design)
+> - [x] Ant Design
+> - [x] Test(can test with Ant Design)
 > - [ ] Tailwind CSS
 > - [ ] Test (can test with Ant and Tailwind)
 > - [ ] jsconfig.json
