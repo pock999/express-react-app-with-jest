@@ -153,10 +153,14 @@ Array [
     </div>
   </form>,
   <hr />,
-  <p>
+  <p
+    className="text-indigo-200 bg-yellow-600"
+  >
     init
   </p>,
-  <p>
+  <p
+    className="text-indigo-200 bg-yellow-600"
+  >
     
   </p>,
 ]

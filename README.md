@@ -3,8 +3,8 @@
 > ## react-app(Front-End)
 > - [x] Ant Design
 > - [x] Test(can test with Ant Design)
-> - [ ] Tailwind CSS
-> - [ ] Test (can test with Ant and Tailwind)
+> - [x] Tailwind CSS
+> - [x] Test (can test import css)
 > - [ ] jsconfig.json
 > - [ ] eslint
 > - [ ] Router

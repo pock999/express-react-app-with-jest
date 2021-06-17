@@ -1,8 +1,43 @@
+- 2021/06/17
+
+[參考](https://medium.com/enjoy-life-enjoy-coding/jest-mock-連-style-都管得著-沒錯-就是管得著-24285728d627)
+
+  - React component 要測試
+
+	```jsx
+	import './style.css';
+
+	// ...略
+	```
+
+	- 安裝 `identity-obj-proxy`
+
+	```
+	yarn add identity-obj-proxy -D
+	```
+
+	- jest.config.js
+
+	```jsx
+	module.exports = {
+			// ...略
+			moduleNameMapper: {
+				"\\.(css|scss|sass|less)$": "identity-obj-proxy" // 把css相關檔案對應至這個identity-obj-proxy
+			},
+	};
+	```
+
+	- 更新snapshot
+
+	```bash
+	jest -u
+	```
+
 - 2021/06/16
 
 `jest.config.js`
 
-```
+```jsx
 module.exports = {
   testEnvironment: 'jest-environment-jsdom',
   setupFilesAfterEnv: ['./src/setupTests.js'],
@@ -19,7 +54,7 @@ snapshot: `react-test-renderer`
 
 `src/setupTests.js`
 
-```
+```jsx
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'; // 看react 版本
 import Enzyme from 'enzyme';
 
@@ -28,7 +63,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 `package.json` => **棄用**，請改用`2021/06/16`的方法
 
-```
+```json
 // ...略
 "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
@@ -37,7 +72,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 `babel.config.json`
 
-```
+```json
 {
   "presets": ["@babel/preset-react", "@babel/preset-env"],
   "plugins": ["@babel/plugin-transform-react-jsx"]
@@ -48,7 +83,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 `測試程式 xxx.test.js`
 
-```
+```jsx
 // ... 其他略
 
 // 當出現TypeError: window.matchMedia is not a function

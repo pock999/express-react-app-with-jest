@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './style.css';
 import { Form, Input, Button, Checkbox } from 'antd';
 
 const Com = (props) => {
@@ -38,8 +38,8 @@ const Com = (props) => {
         </Form.Item>
     </Form>
     <hr />
-    <p>{ state.username }</p>
-    <p>{ state.password }</p>
+    <p className="text-indigo-200 bg-yellow-600">{ state.username }</p>
+    <p className="text-indigo-200 bg-yellow-600">{ state.password }</p>
   </>
   );
 };
