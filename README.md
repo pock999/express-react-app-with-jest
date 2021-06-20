@@ -10,7 +10,7 @@
 > - [x] eslint
 > - [ ] Router
 > - [ ] Axios
-> - [ ] add .env and .env.default
+> - [x] add .env and .env.default
 > - [ ] Redux
 > - [ ] Redux-saga
 
