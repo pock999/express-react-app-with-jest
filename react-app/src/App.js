@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension */
 import './App.css';
 import React from 'react';
 import DemoForm from 'components/DemoForm';

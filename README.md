@@ -7,7 +7,7 @@
 > - [x] Test (can test import css)
 > - [x] jsconfig.json baseUrl
 > - [x] Test(can test with jsconfig.json baseUrl)
-> - [ ] eslint
+> - [x] eslint
 > - [ ] Router
 > - [ ] Axios
 > - [ ] add .env and .env.default
@@ -18,6 +18,7 @@
 
 > ## express-app(Front-End)
 > - [ ] Global
+> - [ ] eslint
 > - [ ] ORM &rarr; Sequelize
 > - [ ] Bootstrap
 > - [ ] eslint

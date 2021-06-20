@@ -25,6 +25,44 @@
 		}
 		```
 
+		- eslintrc.js(常使用airbnb標準)
+
+		```jsx
+		module.exports = {
+			// ...略
+			rules: {
+				'no-await-in-loop': 'warn',
+				'react/jsx-no-target-blank': 'off',
+				'react/react-in-jsx-scope': 'off',
+				'react/require-default-props': 'warn',
+				'react/no-unescaped-entities': 'warn',
+				'react/jsx-props-no-spreading': 'warn',
+				'react/forbid-prop-types': 'warn',
+				'react/button-has-type': 'off',
+				'jsx-a11y/control-has-associated-label': 'warn',
+				'react/jsx-wrap-multilines': 'warn',
+				'react/jsx-boolean-value': 'warn',
+				'import/prefer-default-export': 'off',
+				'import/no-unresolved': 'warn',
+				'no-unused-vars': 'warn',
+				// props 檢查
+				'react/prop-types': 'warn',
+				// 解構 props
+				'react/destructuring-assignment': 'warn',
+				'no-shadow': 'warn',
+			},
+			// 使airbnb檢查語法時也能認出import的路徑
+			settings: {
+				'import/resolver': {
+					node: {
+						extensions: ['.js', '.jsx', '.ts', '.tsx'],
+						moduleDirectory: ['node_modules', 'src/'],
+					},
+				},
+			},
+		};
+		```
+
 - 2021/06/17
 
 [參考](https://medium.com/enjoy-life-enjoy-coding/jest-mock-連-style-都管得著-沒錯-就是管得著-24285728d627)
