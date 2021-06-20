@@ -5,7 +5,8 @@
 > - [x] Test(can test with Ant Design)
 > - [x] Tailwind CSS
 > - [x] Test (can test import css)
-> - [ ] jsconfig.json
+> - [x] jsconfig.json baseUrl
+> - [x] Test(can test with jsconfig.json baseUrl)
 > - [ ] eslint
 > - [ ] Router
 > - [ ] Axios

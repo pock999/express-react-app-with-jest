@@ -1,3 +1,30 @@
+- 2021/06/20
+    - jsconfig.json ⇒ 使import可以直接使用絕對路徑(從src起算)
+
+		```json
+		{
+			"compilerOptions": {
+				"baseUrl": "src/"
+			},
+			"include": ["src"]
+		}
+		```
+
+		- .env
+
+		```json
+		NODE_PATH=src/
+		```
+
+		- jest.config.json ⇒ 使jest測試時可以直接使用絕對路徑(從src起算)，也可以讀懂組件內import的東西
+
+		```json
+		{
+			// ...略
+			moduleDirectories: ['node_modules', 'src']
+		}
+		```
+
 - 2021/06/17
 
 [參考](https://medium.com/enjoy-life-enjoy-coding/jest-mock-連-style-都管得著-沒錯-就是管得著-24285728d627)

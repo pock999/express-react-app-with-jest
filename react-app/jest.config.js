@@ -3,5 +3,6 @@ module.exports = {
   setupFilesAfterEnv: ['./src/setupTests.js'],
   moduleNameMapper: {
     "\\.(css|scss|sass|less)$": "identity-obj-proxy"
-  }
+  },
+  moduleDirectories: ['node_modules', 'src']
 }
