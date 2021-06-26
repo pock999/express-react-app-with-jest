@@ -8,7 +8,8 @@
 > - [x] jsconfig.json baseUrl
 > - [x] Test(can test with jsconfig.json baseUrl)
 > - [x] eslint
-> - [ ] Router
+> - [x] Router
+> - [ ] Test(can test with Router)
 > - [ ] Axios
 > - [x] add .env and .env.default
 > - [ ] Redux
