@@ -2,13 +2,15 @@
 import React from 'react';
 import {
   matchPath, Switch, Route, Redirect,
+  Router,
 } from 'react-router-dom';
 
+import { history } from 'packages';
 import AuthService from './AuthService';
 import routes from './routes';
 
 const Routers = (props) => (
-  <>
+  <Router history={history}>
     <Switch>
       {routes && routes.map((route) => (
         <Route
@@ -24,7 +26,7 @@ const Routers = (props) => (
         />
       ))}
     </Switch>
-  </>
+  </Router>
 );
 
 export { Routers };

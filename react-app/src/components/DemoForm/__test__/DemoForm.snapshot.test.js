@@ -3,11 +3,10 @@ import renderer from 'react-test-renderer';
 
 import From from '../index';
 
-
 beforeAll(() => {
-  Object.defineProperty(window, "matchMedia", {
+  Object.defineProperty(window, 'matchMedia', {
     writable: true,
-    value: jest.fn().mockImplementation(query => ({
+    value: jest.fn().mockImplementation((query) => ({
       matches: false,
       media: query,
       onchange: null,
@@ -16,7 +15,7 @@ beforeAll(() => {
       addEventListener: jest.fn(),
       removeEventListener: jest.fn(),
       dispatchEvent: jest.fn(),
-    }))
+    })),
   });
 });
 it('renders correctly', () => {

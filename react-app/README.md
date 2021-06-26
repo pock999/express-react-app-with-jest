@@ -1,3 +1,131 @@
+- 2021/06/26
+
+    - /src/router/__test__/Routers.test.js
+		```jsx
+		import React from 'react';
+		import { shallow } from 'enzyme';
+		import { Route } from 'react-router-dom';
+		import { Routers } from '../index';
+
+		it('Router check the view is need Auth', () => {
+			const wrapper = shallow(<Routers />);
+			const pathMap = wrapper.find(Route).reduce((pathMap, route) => {
+				const routeProps = route.props();
+				if (routeProps.component) {
+					pathMap[routeProps.path] = routeProps.component;
+				} else if (routeProps.render) {
+					pathMap[routeProps.path] = routeProps.render({}).type;
+				}
+				return pathMap;
+			}, {});
+
+			// 若有包含Redirect，表示該頁面需要有權限
+			expect(pathMap['/login'].toString()).not.toContain('Redirect');
+			expect(pathMap['/profile'].toString()).toContain('Redirect');
+		});
+		```
+
+		- /src/router/index.js
+		```jsx
+		/* eslint-disable react/jsx-filename-extension */
+		import React from 'react';
+		import {
+			matchPath, Switch, Route, Redirect,
+			Router,
+		} from 'react-router-dom';
+
+		import { history } from 'packages';
+		import AuthService from './AuthService';
+		import routes from './routes';
+
+		const Routers = (props) => (
+			<Router history={history}>
+				<Switch>
+					{routes && routes.map((route) => (
+						<Route
+							path={route.path}
+							exact={route.exact || false}
+							key={route.path}
+							// 這裡面render
+							render={(props) => {
+								const { allow, failPath } = AuthService.validateRoute(route);
+								if (allow) return (<route.component {...props} routes={route.routes} />);
+
+								return <Redirect to={failPath} />;
+							}}
+						/>
+					))}
+				</Switch>
+			</Router>
+		);
+
+		export { Routers };
+		```
+
+		- /src/router/routes/index.js
+		```jsx
+		/* eslint-disable react/jsx-filename-extension */
+		import React from 'react';
+		import history from 'packages/@history';
+		import Loadable from 'react-loadable';
+
+		const routes = [
+			{
+				component: () => {
+					const Page = Loadable({
+						loader: () => import('views/Home'),
+						// loading: Loading,
+						loading: () => (<>...載入中</>),
+					});
+					return (
+						<Page />
+					);
+				},
+				path: '/',
+				exact: true,
+				permissions: null,
+			},
+		...
+		];
+		```
+
+		- /src/router/AuthService.js
+
+		```jsx
+		const service = {
+			/**
+			 * return { allow, failPath }
+			*/
+			validateRoute(route) {
+				// TODO: check
+
+				// TODO: check route.permissions isNull => yes all alow
+
+				// TODO: get localStorage token
+
+				// TODO: no have token => logout(clear localStorage)
+				// TODO: have token => token-login ( fail => logout(clear localStorage) )
+
+				// TODO: check route and permissions
+
+				// TODO: 暫時為了測試用
+				if (route.path === '/profile') {
+					return {
+						allow: false,
+						failPath: '/login',
+					};
+				}
+
+				return {
+					allow: true,
+					failPath: null,
+				};
+			},
+		};
+
+		export default service;
+		```
+
 - 2021/06/20
     - jsconfig.json ⇒ 使import可以直接使用絕對路徑(從src起算)
 
