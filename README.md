@@ -10,7 +10,7 @@
 > - [x] eslint
 > - [x] Router
 > - [x] Test(can test with Router, 算是有?進展(不完全))
-> - [ ] Axios
+> - [x] Axios
 > - [x] add .env and .env.default
 > - [ ] Redux
 > - [ ] Redux-saga
